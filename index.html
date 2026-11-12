@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Projeto de indicador visual de som com Arduino e sensor KY-038.">
+<title>AUDIO LAB | Equalizador com Arduino</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#inicio"><b>A</b> AUDIO<span>LAB</span></a>
+  <nav><a href="#conceito">O equalizador</a><a href="#projeto">Nosso projeto</a><a href="#falha">O problema</a><a href="#conclusao">Conclusão</a></nav>
+</header>
+<main>
+<section class="hero" id="inicio">
+  <div>
+    <p class="eyebrow">PROJETO DE ROBÓTICA • ARDUINO UNO</p>
+    <h1>O som ganha<br><span>uma forma visual.</span></h1>
+    <p class="lead">Uma experiência com sensor de som KY-038, Arduino e LEDs para transformar a intensidade sonora em sinais luminosos.</p>
+    <a class="button" href="#projeto">CONHEÇA A MONTAGEM ↓</a>
+    <div class="stats"><div><b>KY-038</b><small>Sensor de som</small></div><div><b>UNO R3</b><small>Placa utilizada</small></div><div><b>LEDs</b><small>Indicação visual</small></div></div>
+  </div>
+  <div class="visual"><div class="orbit"></div><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><small>● SOUND / VISUAL RESPONSE</small></div>
+</section>
+<section class="section" id="conceito">
+  <p class="eyebrow">01 / CONCEITO</p><h2>O que é um <span>equalizador de som?</span></h2>
+  <p class="muted intro">Um equalizador é um recurso de áudio que permite ajustar diferentes partes do espectro de frequências de um som. Em modelos convencionais, o sinal é dividido em faixas que podem ter seu volume aumentado ou diminuído.</p>
+  <div class="frequency">
+    <article><div class="bar bass"></div><h3>GRAVES</h3><small>Baixas frequências</small></article>
+    <article><div class="bar mids"></div><h3>MÉDIOS</h3><small>Frequências médias</small></article>
+    <article><div class="bar treble"></div><h3>AGUDOS</h3><small>Altas frequências</small></article>
+  </div>
+  <div class="note"><b>i</b><p><strong>Importante:</strong> o nosso protótipo com KY-038 funciona como um indicador visual da intensidade do som. Ele não separa graves, médios e agudos como um equalizador de áudio convencional.</p></div>
+</section>
+<section class="section darker" id="projeto">
+  <p class="eyebrow">02 / NOSSA MONTAGEM</p><h2>O projeto com <span>Arduino.</span></h2>
+  <p class="muted intro">A proposta foi criar uma montagem simples que percebesse sons no ambiente e respondesse por meio de LEDs.</p>
+  <div class="cards">
+    <article class="card"><label>VISÃO GERAL / 01</label><div class="circuit"><div class="board">ARDUINO<small>UNO R3</small></div><div class="sensor">◉<small>KY-038</small></div><div class="leds">● ● ● ●</div></div><h3>Como deveria funcionar?</h3><p>O KY-038 capta o som ambiente. O Arduino recebe o sinal do sensor, interpreta a leitura e pode acionar LEDs conforme o nível detectado.</p></article>
+    <article class="card"><label>COMPONENTES / 02</label><h3>Materiais utilizados</h3><ul><li><b>Arduino UNO</b><small>Controla o funcionamento do circuito.</small></li><li><b>Sensor KY-038</b><small>Detecta sons e variações de intensidade.</small></li><li><b>Protoboard</b><small>Permite conectar componentes sem solda.</small></li><li><b>LEDs e resistores</b><small>Indicam visualmente a resposta do circuito.</small></li><li><b>Jumpers</b><small>Fazem as ligações entre os componentes.</small></li></ul></article>
+  </div>
+  <div class="flow"><div><b>01 · SOM</b><small>O som chega ao sensor.</small></div><span>→</span><div><b>02 · KY-038</b><small>O sensor gera um sinal.</small></div><span>→</span><div><b>03 · ARDUINO</b><small>A placa interpreta a leitura.</small></div><span>→</span><div><b>04 · LEDs</b><small>Indicam a resposta.</small></div></div>
+</section>
+<section class="section issue" id="falha">
+  <div><p class="eyebrow">03 / DESAFIO ENCONTRADO</p><h2>Por que o circuito <span>não funcionou?</span></h2><p class="muted">Durante a montagem, o projeto não apresentou o funcionamento esperado. A principal dificuldade identificada foi o mau contato entre os pinos do sensor KY-038 e os contatos da protoboard.</p><p class="muted">Quando a conexão não fica firme, o sinal pode não chegar corretamente ao Arduino. Isso impede que a placa interprete a leitura e acione os LEDs como planejado.</p></div>
+  <div class="diagnostic"><label>● ANÁLISE DA MONTAGEM</label><p><span>Conexão do sensor</span><b class="warning">Instável</b></p><p><span>Leitura do sinal</span><b>Comprometida</b></p><p><span>Resposta dos LEDs</span><b>Irregular / ausente</b></p><hr><small>CAUSA MAIS PROVÁVEL</small><strong>Mau contato na protoboard</strong></div>
+</section>
+<section class="section darker">
+  <p class="eyebrow">04 / PRÓXIMOS PASSOS</p><h2>O que poderia <span>ser melhorado?</span></h2>
+  <div class="improvements"><article><b>A</b><h3>Revisar as conexões</h3><p>Verificar se os pinos do sensor estão bem encaixados e se os jumpers estão firmes.</p></article><article><b>B</b><h3>Conferir a alimentação</h3><p>Checar as ligações de 5V e GND e as conexões na protoboard.</p></article><article><b>C</b><h3>Testar por etapas</h3><p>Testar primeiro o sensor pelo Monitor Serial e depois acrescentar os LEDs.</p></article></div>
+</section>
+<section class="conclusion" id="conclusao"><p class="eyebrow">05 / CONCLUSÃO</p><h2>Mesmo quando não funciona,<br><span>um projeto ensina.</span></h2><p>A montagem permitiu estudar a relação entre som, sensores e programação com Arduino. Apesar do problema de contato, foi possível identificar uma dificuldade prática comum em circuitos eletrônicos: conexões mal encaixadas podem comprometer todo o sistema. Com uma revisão da montagem e novos testes, o protótipo poderá ser aprimorado.</p><a class="button" href="#inicio">VOLTAR AO INÍCIO ↑</a></section>
+</main>
+<footer><a class="brand" href="#inicio"><b>A</b> AUDIO<span>LAB</span></a><p>Projeto educacional de eletrônica e robótica • 2026</p><small>SOUND INTO LIGHT</small></footer>
+</body></html>
